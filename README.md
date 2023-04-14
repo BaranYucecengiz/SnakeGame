@@ -1,3 +1,2 @@
 # SnakeGame
-Simple Snake Game
-Used SFML Library
+Simple Snake Game with Using SFML Library
