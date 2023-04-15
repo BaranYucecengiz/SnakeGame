@@ -5,10 +5,10 @@
 #include <vector>
 #include <iostream>
 #include<windows.h>
-class Player: public Game
+class Player : public Game
 {
 private:
-	static const constexpr char *def_name = "Unnamed";
+	static const constexpr char* def_name = "Unnamed";
 protected:
 	std::string user_name;
 	float snake_speed;
@@ -24,13 +24,13 @@ public:
 	~Player();
 
 	//Methods
-	void set_direction(const sf::Event &event, char left, char right, char forward, char back);
+	void set_direction(const sf::Event& event, char left, char right, char forward, char back);
 	void move();
-	void create_parts(sf::RectangleShape &&shape,const sf::Vector2f &pos);
+	void create_parts(sf::RectangleShape&& shape, const sf::Vector2f& pos);
 	void update_snake();
 	void dead();
 	bool isHitWall();
-	bool isHitSnake();
+	bool isHitSnake(const std::vector<Player*> players);
 	//Getters - Setter
 	std::vector<sf::RectangleShape> get_snake() const {
 		return this->snake;
@@ -41,7 +41,7 @@ public:
 	sf::Vector2f get_head_position() const {
 		return this->head_position;
 	}
-	void set_snake_speed(int snake_speed){
+	void set_snake_speed(int snake_speed) {
 		this->snake_speed = snake_speed;
 	}
 };
